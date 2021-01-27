@@ -1,0 +1,33 @@
+import random
+z=random.randint(1,100)
+tries=0
+x=0
+num_of_allowed_tries=6
+while x!=z and tries<num_of_allowed_tries:
+    x=float(input("Enter random number between 1 and 100 "))
+    tries+=1
+    if x==z:
+        print("you have cracked the code") 
+        break
+    elif x>z:
+        print("This number is too high.")
+    elif x<z:
+        print("This number is too low.")
+    tries_left=num_of_allowed_tries - tries
+    if tries_left ==1:
+        print("you have "+ str(tries_left) +" more try")
+    else:
+        print("you have "+ str(tries_left) +" more tries")
+if (x-z)>50:
+    print("You are way off")
+elif (z-x)>50:
+    print("you are way off")
+elif (z-x)>15:
+    print("Your answer is close, but still way off.")
+elif (x-z)>15:
+    print("Your answer is close, but still way off.")
+elif (z-x)>5:
+    print("SO CLOSE")
+elif (x-z)>5:
+    print("SO CLOSE")
+print ("The answer was " + str(z))
